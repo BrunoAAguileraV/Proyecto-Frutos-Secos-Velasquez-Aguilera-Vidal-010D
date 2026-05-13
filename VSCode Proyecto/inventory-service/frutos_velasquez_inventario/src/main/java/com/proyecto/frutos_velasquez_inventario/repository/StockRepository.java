@@ -1,0 +1,19 @@
+package com.proyecto.frutos_velasquez_inventario.repository;
+
+import java.util.Optional;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.proyecto.frutos_velasquez_inventario.modelo.Stock;
+
+@Repository
+public interface StockRepository extends JpaRepository<Stock, Long>{
+
+    Optional<Stock> findFirstByOrderByStock_actualAsc();
+
+    Optional<Stock> findByIdProducto(Long idProducto);
+
+    List<Stock> findByStock_actual(Double cantidad);
+
+}
