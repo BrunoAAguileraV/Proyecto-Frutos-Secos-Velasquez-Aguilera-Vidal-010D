@@ -14,6 +14,8 @@ public interface StockRepository extends JpaRepository<Stock, Long>{
 
     Optional<Stock> findByIdProducto(Long idProducto);
 
-    List<Stock> findByStock_actual(Double cantidad);
+    List<Stock> findByStockActual(Double stockActual);
+
+    List<Stock> findByStockActualLessThan(Double limite);
 
 }

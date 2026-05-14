@@ -16,7 +16,6 @@ public class Stock {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idStock;
     private Long idProducto;
-    private Double stock_actual;
-    private Double stock_minimo;
+    private Double stockActual;
 
 }
