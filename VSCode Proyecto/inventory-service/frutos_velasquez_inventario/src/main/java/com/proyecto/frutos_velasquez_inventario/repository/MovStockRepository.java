@@ -1,19 +1,29 @@
 package com.proyecto.frutos_velasquez_inventario.repository;
 
+import com.proyecto.frutos_velasquez_inventario.modelo.MovimientoStock;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.proyecto.frutos_velasquez_inventario.modelo.MovimientoStock;
-
 import java.util.List;
-import java.util.Optional;
-
 
 @Repository
-public interface MovStockRepository extends JpaRepository<MovimientoStock, Long>{
+public interface MovStockRepository extends JpaRepository<MovimientoStock, Long> {
 
-    Optional<MovimientoStock> findByIdMovimiento(Long idMovimiento);
+    /**
+     * Busca todo el historial de movimientos de un producto específico.
+     * Vital para el RF08 (Reportes por producto).
+     */
+    List<MovimientoStock> findByIdProducto(Long idProducto);
 
-    List<MovimientoStock> findByTipo_movimientoIgnoreCase(String tipo_movimiento);
+    /**
+     * Filtra movimientos por tipo (ENTRADA, SALIDA, MERMA).
+     * Útil para auditar pérdidas o ver el volumen de ventas.
+     */
+    List<MovimientoStock> findByTipoMovimiento(String tipoMovimiento);
 
+    /**
+     * Obtiene los últimos movimientos registrados.
+     * Ideal para mostrar una "Actividad Reciente" en tu Dashboard.
+     */
+    List<MovimientoStock> findTop10ByOrderByIdMovimientoDesc();
 }

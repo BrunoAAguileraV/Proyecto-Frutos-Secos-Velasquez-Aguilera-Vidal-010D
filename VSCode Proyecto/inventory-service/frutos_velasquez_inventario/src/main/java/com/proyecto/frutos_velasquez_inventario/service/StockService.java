@@ -31,8 +31,12 @@ public class StockService {
         return stockRepository.findByStockActual(cantidad);
     }
 
-    public List<Stock> productosConCantidadBaja(Double limite){
+    public List<Stock> productosBajoStock(Double limite){
         return stockRepository.findByStockActualLessThan(limite);
+    }
+
+    public Optional<Stock> buscarPorProducto(Long idProducto){
+        return stockRepository.findByIdProducto(idProducto);
     }
 
     public void eliminar(Long id){

@@ -1,5 +1,7 @@
 package com.proyecto.frutos_velasquez_inventario.modelo;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +17,9 @@ public class MovimientoStock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMovimiento;
-    private String tipo_movimiento;//COMPRA, VENTA, MERMA
-    private Double cantidad;
 
+    private Long idProducto; 
+    private String tipoMovimiento; // "ENTRADA", "SALIDA", "MERMA"
+    private Double cantidad;
+    private LocalDateTime fechaHora;
 }
