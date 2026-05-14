@@ -30,13 +30,11 @@ public class MovStockController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // 3. Ver el historial de un producto específico (Muy útil para el vendedor)
     @GetMapping("/producto/{idProducto}")
     public List<MovimientoStock> listarPorProducto(@PathVariable Long idProducto) {
         return movStockService.buscarPorProducto(idProducto);
     }
 
-    // 4. REGISTRAR MOVIMIENTO (POST)
     @PostMapping
     public ResponseEntity<MovimientoStock> registrar(@RequestBody MovimientoStock movimiento) {
         try {
