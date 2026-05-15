@@ -1,9 +1,7 @@
 package com.proyecto.frutos_velasquez_compras.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import java.time.LocalDate;
 
 @Entity

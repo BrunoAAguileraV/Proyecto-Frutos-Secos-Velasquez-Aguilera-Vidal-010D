@@ -10,7 +10,7 @@ import com.proyecto.frutos_velasquez_inventario.modelo.Stock;
 @Repository
 public interface StockRepository extends JpaRepository<Stock, Long>{
 
-    Optional<Stock> findFirstByOrderByStock_actualAsc();
+    Optional<Stock> findFirstByOrderByStockActualAsc();
 
     Optional<Stock> findByIdProducto(Long idProducto);
 

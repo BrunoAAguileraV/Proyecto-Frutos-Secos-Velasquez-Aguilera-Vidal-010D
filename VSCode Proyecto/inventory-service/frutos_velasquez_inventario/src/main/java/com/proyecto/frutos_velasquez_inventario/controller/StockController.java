@@ -28,7 +28,7 @@ public class StockController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/{idProducto}")
+    @GetMapping("/producto/{idProducto}")
     public ResponseEntity<Stock> buscarPorProducto(@PathVariable Long idProducto){
         return stockService.buscarPorProducto(idProducto)
                 .map(ResponseEntity::ok)

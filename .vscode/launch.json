@@ -1,0 +1,65 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FrutosVelasquezApplication<frutos-velasquez>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.proyecto.frutos_velasquez.FrutosVelasquezApplication",
+            "projectName": "frutos-velasquez",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiGatewayApplication<api-gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.proyecto.api_gateway.ApiGatewayApplication",
+            "projectName": "api-gateway",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-FrutosVelasquezAnaliticasApplication<frutos_velasquez_analiticas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.proyecto.frutos_velasquez_analiticas.FrutosVelasquezAnaliticasApplication",
+            "projectName": "frutos_velasquez_analiticas",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-FrutosVelasquezComprasApplication<frutos_velasquez_compras>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.proyecto.frutos_velasquez_compras.FrutosVelasquezComprasApplication",
+            "projectName": "frutos_velasquez_compras",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-FrutosVelasquezInventarioApplication<frutos_velasquez_inventario>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.proyecto.frutos_velasquez_inventario.FrutosVelasquezInventarioApplication",
+            "projectName": "frutos_velasquez_inventario",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-FrutosVelasquezVentasApplication<frutos_velasquez_ventas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.proyecto.frutos_velasquez_ventas.FrutosVelasquezVentasApplication",
+            "projectName": "frutos_velasquez_ventas",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

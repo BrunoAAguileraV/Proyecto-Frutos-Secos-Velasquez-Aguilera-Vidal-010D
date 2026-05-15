@@ -28,6 +28,15 @@ public class ProductoController {
             .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/precio/{id}")
+    public ResponseEntity<Integer> obtenerPrecioPorId(@PathVariable Long id) {
+        
+        // Usamos tu método buscarPorId del ProductoService
+        return productoService.buscarPorId(id)
+                .map(producto -> ResponseEntity.ok(producto.getPrecio_venta())) // Extrae y retorna el int
+                .orElse(ResponseEntity.notFound().build()); // 404 si no lo encuentra
+    }
+
     @PostMapping
     public ResponseEntity<Producto> crear(@RequestBody Producto producto){
         return ResponseEntity.ok(productoService.guardar(producto));
