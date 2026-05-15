@@ -1,0 +1,72 @@
+SCRIPTS PARA FULLSTACK-POSTMAN
+
+Paso 1: Microservicio de Catálogo
+URL: http://localhost:8081/api/v1/catalogo/categorias
+
+{
+    "nombre": "Frutos Secos Premium"
+}
+
+Crear Producto (Importante: El id de la categoría debe existir)
+URL: http://localhost:8081/api/v1/catalogo/productos
+
+{
+    "nombre": "Nuez Mariposa",
+    "tipo_medida": "KG",
+    "precio_venta": 9500,
+    "categoria": { "id": 1 }
+}
+
+Paso 2: Microservicio de Inventario
+URL: http://localhost:8081/api/v1/inventario
+
+{
+    "idProducto": 1,
+    "stockActual": 0.0
+}
+
+Entrada de Mercancía
+URL: http://localhost:8081/api/v1/inventario/movimientos
+
+{
+    "idProducto": 1,
+    "tipoMovimiento": "ENTRADA",
+    "cantidad": 100.0
+}
+
+Paso 3: Microservicio de Compras
+Registrar la Compra
+URL: http://localhost:8081/api/v1/compras/historial
+
+{
+    "idProducto": 1,
+    "idProveedor": 1,
+    "costoCompra": 45000.0,
+    "fechaCompra": "2026-05-14"
+}
+
+Paso 4: Microservicio de Ventas
+Crear Venta
+URL: http://localhost:8081/api/v1/ventas
+
+{
+    "detalles": [
+        {
+            "productoId": 1,
+            "cantidad": 2.0
+        }
+    ]
+}
+
+Paso 5: Microservicio de Analítica
+Ver Reporte Diario
+
+URL: http://localhost:8081/api/v1/analitica/reporte?fecha=2026-05-19
+
+
+
+
+
+
+
+

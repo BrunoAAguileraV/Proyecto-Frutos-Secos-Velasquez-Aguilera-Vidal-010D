@@ -3,6 +3,7 @@ package com.proyecto.frutos_velasquez_inventario.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,6 +39,13 @@ public class StockController {
     @GetMapping("/alertas")
     public List<Stock> alertaBajoStock(@RequestParam Double limite){
         return stockService.productosBajoStock(limite);
+    }
+
+    @PostMapping
+    public ResponseEntity<Stock> crearRegistroStock(@RequestBody Stock stock) {
+        // Usamos el método guardar que ya tienes en tu StockService
+        Stock nuevoStock = stockService.guardar(stock);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoStock);
     }
 
 }

@@ -29,12 +29,12 @@ public class VentaService {
         for (DetalleVenta detalle : venta.getDetalles()) {
             try {
                 Integer precio = webClientBuilder.build().get()
-                    .uri("http://localhost:8082/api/v1/productos/precio/" + detalle.getProductoId())
+                    .uri("http://localhost:8081/api/v1/catalogo/productos/precio/" + detalle.getIdProducto())
                     .retrieve()
                     .bodyToMono(Integer.class)
                     .block();
                 if (precio == null || precio <= 0) {
-                    throw new RuntimeException("Error: El producto ID " + detalle.getProductoId() + " tiene precio 0 o no válido en el catálogo.");
+                    throw new RuntimeException("Error: El producto ID " + detalle.getIdProducto() + " tiene precio 0 o no válido en el catálogo.");
                 }
 
                 detalle.setSubtotal(precio * detalle.getCantidad());
@@ -42,7 +42,7 @@ public class VentaService {
                 
                 detalle.setVenta(venta);
             } catch (WebClientResponseException.NotFound e) {
-                throw new RuntimeException("Venta cancelada: El producto ID " + detalle.getProductoId() + " no existe en el Catálogo.");
+                throw new RuntimeException("Venta cancelada: El producto ID " + detalle.getIdProducto() + " no existe en el Catálogo.");
             } catch (Exception e) {
                 // Si el microservicio de Catálogo está apagado o falla
                 throw new RuntimeException("Error de conexión con el Catálogo: " + e.getMessage());

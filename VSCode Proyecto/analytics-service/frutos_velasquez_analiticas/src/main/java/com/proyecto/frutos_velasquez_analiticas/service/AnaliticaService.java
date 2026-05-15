@@ -23,7 +23,7 @@ public class AnaliticaService {
         // 1. Consultamos al micro de Ventas (8083) con escudo protector (try-catch)
         try {
             ingresos = webClientBuilder.build().get()
-                .uri("http://localhost:8086/api/v1/ventas/total-dia/" + fecha)
+                .uri("http://localhost:8081/api/v1/ventas/total-dia/" + fecha)
                 .retrieve()
                 .bodyToMono(Double.class)
                 .block();
@@ -37,8 +37,6 @@ public class AnaliticaService {
             System.out.println("Error de conexión con microservicio de Ventas: " + e.getMessage());
             ingresos = 0.0; 
         }
-
-        // 2. Consultamos al micro de Suministros (8086) - Si aún no existe, devolverá 0
         Double costos = 0.0; 
 
         // 3. Armamos el reporte
