@@ -55,21 +55,21 @@ erDiagram
         Double cantidad
         Double subtotal
         Long id_venta FK
-        Long id_producto FK_LOGICA
+        Long id_producto "FK_LOGICA"
     }
 
     %% MICROSERVICIO INVENTARIO
     STOCK {
         Long id_stock PK
         Double stock_actual
-        Long id_producto FK_LOGICA
+        Long id_producto "FK_LOGICA"
     }
     MOVIMIENTO_STOCK {
         Long id_movimiento PK
         String tipo_movimiento
         Double cantidad
         DateTime fecha_hora
-        Long id_producto FK_LOGICA
+        Long id_producto "FK_LOGICA"
     }
 
     %% MICROSERVICIO COMPRAS
@@ -84,7 +84,7 @@ erDiagram
         Double costo_compra
         Date fecha_compra
         Long id_proveedor FK
-        Long id_producto FK_LOGICA
+        Long id_producto "FK_LOGICA"
     }
 
     %% MICROSERVICIO ANALÍTICA
