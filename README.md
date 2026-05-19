@@ -25,6 +25,7 @@ La solución está construida bajo el patrón **CSR (Controller-Service-Reposito
 * **Comunicación Inter-servicios:** Spring WebFlux (WebClient)
 * **Gestión de Versiones:** Git / GitHub
 
+```mermaid
 erDiagram
     %% MICROSERVICIO CATÁLOGO
     CATEGORIA ||--o{ PRODUCTO : "tiene"
@@ -95,7 +96,7 @@ erDiagram
         Double utilidad_neta
     }
 
-    %% RELACIONES LÓGICAS ENTRE MICROSERVICIOS (A través de API)
+    %% RELACIONES LÓGICAS ENTRE MICROSERVICIOS
     PRODUCTO ||--o{ DETALLE_VENTA : "WebClient (Consulta Precio)"
     PRODUCTO ||--o{ STOCK : "WebClient (Valida Existencia)"
     PRODUCTO ||--o{ MOVIMIENTO_STOCK : "WebClient (Referencia)"
@@ -103,6 +104,7 @@ erDiagram
     
     VENTA ||--o| REPORTE_ANALITICA : "WebClient (Suma Ingresos)"
     HISTORIAL_COMPRA ||--o| REPORTE_ANALITICA : "WebClient (Suma Costos)"
+```
 
 ## Pasos para la Ejecución
 
