@@ -17,15 +17,6 @@ La solución está construida bajo el patrón **CSR (Controller-Service-Reposito
 5.  **Microservicio de Compras:** Registro de adquisiciones a proveedores y gestión de costos.
 6.  **Microservicio de Analítica:** Generación de reportes diarios consolidados (Ingresos vs. Costos).
 
-## Stack Tecnológico
-* **Lenguaje:** Java 17+
-* **Framework:** Spring Boot 3.x
-* **Persistencia:** Spring Data JPA / Hibernate
-* **Base de Datos:** MySQL
-* **Comunicación Inter-servicios:** Spring WebFlux (WebClient)
-* **Gestión de Versiones:** Git / GitHub
-
-```mermaid
 erDiagram
     %% MICROSERVICIO CATÁLOGO
     CATEGORIA ||--o{ PRODUCTO : "tiene"
@@ -104,7 +95,15 @@ erDiagram
     
     VENTA ||--o| REPORTE_ANALITICA : "WebClient (Suma Ingresos)"
     HISTORIAL_COMPRA ||--o| REPORTE_ANALITICA : "WebClient (Suma Costos)"
-```
+
+
+## Stack Tecnológico
+* **Lenguaje:** Java 17+
+* **Framework:** Spring Boot 3.x
+* **Persistencia:** Spring Data JPA / Hibernate
+* **Base de Datos:** MySQL
+* **Comunicación Inter-servicios:** Spring WebFlux (WebClient)
+* **Gestión de Versiones:** Git / GitHub
 
 ## Pasos para la Ejecución
 
