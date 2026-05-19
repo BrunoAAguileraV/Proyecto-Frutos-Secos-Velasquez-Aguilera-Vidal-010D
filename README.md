@@ -17,6 +17,7 @@ La solución está construida bajo el patrón **CSR (Controller-Service-Reposito
 5.  **Microservicio de Compras:** Registro de adquisiciones a proveedores y gestión de costos.
 6.  **Microservicio de Analítica:** Generación de reportes diarios consolidados (Ingresos vs. Costos).
 
+```mermaid
 erDiagram
     %% MICROSERVICIO CATÁLOGO
     CATEGORIA ||--o{ PRODUCTO : "tiene"
@@ -95,6 +96,7 @@ erDiagram
     
     VENTA ||--o| REPORTE_ANALITICA : "WebClient (Suma Ingresos)"
     HISTORIAL_COMPRA ||--o| REPORTE_ANALITICA : "WebClient (Suma Costos)"
+```
 
 
 ## Stack Tecnológico
